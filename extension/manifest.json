@@ -18,18 +18,18 @@
       "tabs",
       "storage",
       "activeTab",
-      "notifications"
+      "notifications",
+      "webRequest", 
+      "webNavigation"
     ],
+    "host_permissions": ["<all_urls>"],
 
     "options_ui": {
       "page": "options.html"
     },
     "content_scripts": [
       {
-        "matches": [
-        "http://*/*",
-        "https://*/*"
-        ],
+        "matches": ["<all_urls>"],
 
         "js": [
             "background/urlChecker.js",
