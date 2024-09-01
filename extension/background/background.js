@@ -6,7 +6,7 @@ const urlChecker = new URLChecker();
 const qrScanner = new QRScanner();
 const alertManager = new AlertManager();
 
-// Listener for tab updates (to check URLs)
+// listener to check url
 chrome.tabs.onUpdated.addListener((tabId, changeInfo, tab) => {
     if (changeInfo.status === 'complete' && tab.url) {
         const result = urlChecker.checkURL(tab.url);
@@ -16,7 +16,7 @@ chrome.tabs.onUpdated.addListener((tabId, changeInfo, tab) => {
     }
 });
 
-// Listener for messages from other parts of the extension (e.g., UI, content scripts)
+// listener for messages from other parts of the extension (e.g., UI, content scripts)
 chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
     if (request.action === 'checkUrl') {
         const result = urlChecker.checkURL(request.url);

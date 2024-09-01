@@ -9,7 +9,7 @@ class AlertManager {
     }
 
     showAlert(message) {
-        alert(message); // For development and testing purposes
+        alert(message); // testing
     }
 }
 

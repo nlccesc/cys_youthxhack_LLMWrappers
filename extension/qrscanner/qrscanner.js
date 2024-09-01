@@ -8,7 +8,7 @@ class QRScanner {
     scan(imageData) {
         console.log('Scanning QR code...');
         const decodedData = this.decoder.decode(imageData);
-        return decodedData; // Return the decoded URL or data
+        return decodedData;
     }
 }
 
