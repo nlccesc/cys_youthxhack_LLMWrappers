@@ -1,3 +1,5 @@
+// background/urlChecker.js
+
 class URLChecker {
     constructor() {
         this.threatListAPI = 'https://safebrowsing.googleapis.com/v4/threatMatches:find';

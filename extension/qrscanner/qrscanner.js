@@ -1,3 +1,5 @@
+// qrscanner/qrscanner.js
+
 import { QRDecoder } from 'qrdecoder.js';
 
 class QRScanner {

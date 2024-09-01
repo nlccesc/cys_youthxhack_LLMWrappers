@@ -1,6 +1,8 @@
-import { URLChecker } from 'urlChecker.js';
-import { QRScanner } from 'qrscanner/qrScanner.js';
-import { AlertManager } from 'utils/alertmanager.js';
+// background/background.js
+import { URLChecker } from './urlChecker.js';
+import { QRScanner } from '../qrscanner/qrscanner.js';
+import { AlertManager } from '../utils/alertmanager.js';
+
 
 const urlChecker = new URLChecker();
 const qrScanner = new QRScanner();
