@@ -1,8 +1,8 @@
 {
   "name": "tutum",
   "version": "0.0.1",
-  "manifest_version": 2,
-  "description": "your ultimate brower extension for security check",
+  "manifest_version": 3,
+  "description": "Your ultimate brower extension for security check",
   "icons": {
     "16": "icons/bot.png",
     "128": "icons/tutum.png"
@@ -37,10 +37,10 @@
   ],
   "browser_action": {
     "default_icon": {
-      "19": "icons/icon-19.png",
-      "38": "icons/icon-38.png"
+      "19": "icons/bot.png",
+      "38": "icons/tutum.png"
     },
-    "default_title": "Extension Boilerplate",
+    "default_title": "Tutum",
     "default_popup": "popup.html"
   }
 }
