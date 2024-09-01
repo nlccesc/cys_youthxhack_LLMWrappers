@@ -1,6 +1,6 @@
 // qrscanner/qrdecoder.js
 
-class QRDecoder {
+class ImageDecoder {
     decode(imageData) {
         console.log('Decoding QR code...');
         // placeholder URL
@@ -8,4 +8,4 @@ class QRDecoder {
     }
 }
 
-export { QRDecoder };
+export { ImageDecoder };
