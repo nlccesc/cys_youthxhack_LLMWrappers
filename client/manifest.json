@@ -16,8 +16,8 @@
   "permissions": [
     "tabs",
     "storage",
-    "http://*/*",
-    "https://*/*"
+    "http://*",
+    "https://*"
   ],
   "options_ui": {
     "page": "src/options.html"
@@ -25,8 +25,8 @@
   "content_scripts": [
     {
       "matches": [
-        "http://*/*",
-        "https://*/*"
+        "http://*",
+        "https://*"
       ],
       "js": [
         "src/scripts/contentscript.js"
