@@ -1,3 +1,5 @@
+// qrscanner/qrdecoder.js
+
 class QRDecoder {
     decode(imageData) {
         console.log('Decoding QR code...');

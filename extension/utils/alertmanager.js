@@ -1,3 +1,5 @@
+// utils/alertmanager.js
+
 class AlertManager {
     showPopup(message) {
         chrome.notifications.create('', {
