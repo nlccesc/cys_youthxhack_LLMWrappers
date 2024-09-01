@@ -1,7 +1,8 @@
 // background/background.js
-import { URLChecker } from './urlChecker.js';
-import { QRScanner } from '../qrscanner/qrscanner.js';
-import { AlertManager } from '../utils/alertmanager.js';
+import { URLChecker } from 'services/url_checker.js';
+import { QRScanner } from '../services/qr_scanner.js';
+import { AlertManager } from '../utils/alert_manager.js';
+
 
 
 const urlChecker = new URLChecker();
