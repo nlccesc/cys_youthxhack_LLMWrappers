@@ -12,7 +12,6 @@ from app.utils.dataset import QRCodeDataset
 from app.utils.helpers import log_to_console
 
 def train_model():
-    # Define the absolute path to the root directory
     root_dir = "your_root_dir"
     
     try:
