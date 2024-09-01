@@ -1,17 +1,59 @@
+
+
 {
-  "manifest_version": 3,
-  "name": "Security Chrome Extension",
-  "version": "1.0",
-  "description": "A Chrome extension to verify the legitimacy of digital content.",
-  "permissions": [
-      "activeTab",
+    "name": "Tutum",
+    "version": "0.0.1",
+    "manifest_version": 3,
+    "description": "Your ultimate brower extension for security check",
+    "icons": {
+      "16": "icons/bot.png",
+      "128": "icons/tutum.png"
+    },
+    "default_locale": "en",
+    "background": {
+        "service_worker": "background/background.js"
+    },
+
+    "permissions": [
+      "tabs",
       "storage",
+      "activeTab",
       "notifications"
-  ],
-  "background": {
-      "service_worker": "background/background.js"
-  },
-  "action": {
-      "default_popup": "popup/popup.html"
+    ],
+
+    "options_ui": {
+      "page": "options.html"
+    },
+    "content_scripts": [
+      {
+        "matches": [
+        "http://*/*",
+        "https://*/*"
+        ],
+
+        "js": [
+            "background/urlChecker.js",
+            "utils/alertManager.js",
+            "qrscanner/qrscanner.js",
+            "qrscanner/qrdecoder.js"
+        ],
+        
+        "run_at": "document_end",
+        "all_frames": true
+      }
+    ],
+  
+    "browser_action": {
+      "default_icon": {
+        "19": "icons/bot.png",
+        "38": "icons/tutum.png"
+      },
+      "default_title": "Tutum",
+      "action": {
+        "default_popup": "popup.html"
+        }
+    }
   }
-}
+  
+  
+  
