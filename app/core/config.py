@@ -1,8 +1,8 @@
 # app/core/config.py
 
-from pydantic_settings import BaseSettings
+import pydantic_settings 
 
-class Settings(BaseSettings):
+class Settings(pydantic_settings.BaseSettings):
     PROJECT_NAME: str = "youthxhack"
     DATABASE_URL: str
     REDIS_URL : str
