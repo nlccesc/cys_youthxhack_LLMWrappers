@@ -1,8 +1,6 @@
 # app/models/models.py
 
-from sqlalchemy import (
-    Column, Integer, String, DateTime
-)
+from sqlalchemy import Column, Integer, String, DateTime
 from app.core.db import Base
 
 class ContentVerificationLog(Base):
