@@ -28,8 +28,18 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   
     const scanButton = document.getElementById('scanButton');
-    scanButton.addEventListener('click', function() {
-      // Implement scan functionality here
+    scanButton.addEventListener('click', async function () {
+        const [tab] = await chrome.tabs.query({ active: true, currentWindow: true });
+
+        if (tab && tab.url) {
+            chrome.runtime.sendMessage({ action: 'checkUrl', url: tab.url }, (response) => {
+                if (response.result !== 'safe') {
+                    alert(`Warning: The site ${tab.url} is considered ${response.result}`);
+                } else {
+                    alert('The site is safe.');
+                }
+            });
+        }
     });
   
     const optionsLink = document.querySelector(".js-options");
