@@ -1,6 +1,9 @@
 # app/services/tasks.py
 
 from celery import Celery
+# Add the following line to resolve the import error
+import sys
+sys.path.append('/path/to/celery')
 from app.core.config import settings
 
 celery = Celery(__name__, broker=settings.REDIS_URL)

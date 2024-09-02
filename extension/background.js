@@ -1,7 +1,7 @@
 // background/background.js
 import { URLChecker } from 'services/url_checker.js';
-import { QRScanner } from '../services/qr_scanner.js';
-import { AlertManager } from '../utils/alert_manager.js';
+import { QRScanner } from './services/qr_scanner.js';
+import { AlertManager } from './utils/alert_manager.js';
 
 
 
