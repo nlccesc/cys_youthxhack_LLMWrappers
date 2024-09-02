@@ -30,7 +30,7 @@ document.addEventListener('DOMContentLoaded', function () {
       });
     });
   
-    const scanButton = document.getElementById('scanButton');
+    // scanButton = document.getElementById('scanButton');
     scanButton.addEventListener('click', async function () {
         const [tab] = await chrome.tabs.query({ active: true, currentWindow: true });
 
@@ -45,7 +45,7 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     });
   
-    const optionsLink = document.querySelector(".js-options");
+    // optionsLink = document.querySelector(".js-options");
     optionsLink.addEventListener("click", function (e) {
       e.preventDefault();
       chrome.tabs.create({ 'url': chrome.runtime.getURL('options.html') });

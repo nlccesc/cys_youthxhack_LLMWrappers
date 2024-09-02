@@ -16,7 +16,7 @@ body, html {
 .popup-content {
   width: 320px; /* Adjusted for a smaller popup */
   padding: 15px;
-  background: #fff;
+  background: #e2e7fe;
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   text-align: center;
