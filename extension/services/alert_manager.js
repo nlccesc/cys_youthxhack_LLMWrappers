@@ -1,4 +1,4 @@
-// utils/alertmanager.js
+// extension/services/alert_manager.js
 
 class AlertManager {
     showPopup(message) {
@@ -11,7 +11,7 @@ class AlertManager {
     }
 
     showAlert(message) {
-        alert(message); // testing
+        alert(message); // for debugging or simple alerts
     }
 }
 

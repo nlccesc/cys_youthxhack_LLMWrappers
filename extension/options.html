@@ -2,24 +2,62 @@
 <html>
 <head>
   <meta charset="utf-8">
+<<<<<<< Updated upstream
   <link href="styles/options.css" rel="stylesheet">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Tutum Options & Settings</title>
 </head>
 <body class="wrap">
-  <div class="container">
-    <header class="header">
-      <h1>Tutum Settings</h1>
-      <p class="lead">Customize your security preferences and options</p>
+  <div class="grid">
+    <div class="unit whole center-on-mobiles">
+      <div class="heading">
+        <h1>Extension Boilerplate</h1>
+        <p class="lead">A foundation for creating cross-browser extensions</p>  
+      </div>
+    </div>
+=======
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Tutum Options & Settings</title>
+</head>
+<body class="bg-gray-800 text-white p-6">
+  <div class="container mx-auto bg-gray-900 p-6 rounded-lg shadow-lg">
+    <header class="header mb-6">
+      <h1 class="text-2xl font-bold text-blue-400">Tutum Settings</h1>
+      <p class="lead text-gray-400">Customize your security preferences and options</p>
     </header>
     
     <section class="content">
-      <div class="option">
-        <h5>Popup Color</h5>  
-        <div class="radio-group">
-          <label><input class="js-radio white" type="radio" name="popupColor" value="white"> White</label>
-          <label><input class="js-radio beige" type="radio" name="popupColor" value="beige"> Beige</label>
-          <label><input class="js-radio lavender" type="radio" name="popupColor" value="lavender"> Lavender</label>
+      <div class="option mb-4">
+        <h5 class="text-lg font-semibold text-gray-300">Popup Color</h5>  
+        <div class="radio-group mt-2">
+          <label class="block"><input class="js-radio white" type="radio" name="popupColor" value="white"> White</label>
+          <label class="block"><input class="js-radio beige" type="radio" name="popupColor" value="beige"> Beige</label>
+          <label class="block"><input class="js-radio lavender" type="radio" name="popupColor" value="lavender"> Lavender</label>
+        </div>
+      </div>
+    </section>
+    
+    <footer class="footer text-center mt-6">
+      <p>&copy; 2024 Tutum Security Extension</p>
+    </footer>
+>>>>>>> Stashed changes
+  </div>
+  
+  <section class="content">
+    <div class="grid">
+      <div class="unit whole center-on-mobiles">
+        <div class="option">
+          <h5>Popup color</h5>  
+          <div class="radio-group">
+            <label><input class="js-radio white" type="radio" name="radio" value="white">White</label>
+            <label><input class="js-radio beige" type="radio" name="radio" value="beige">Beige</label>
+            <label><input class="js-radio lavender" type="radio" name="radio" value="lavender">Lavender</label>
+          </div>
+        </div>
+        
+        <div class="option">
+          <em class="text-muted">...display your extensions' options here...</em>
         </div>
       </div>
       

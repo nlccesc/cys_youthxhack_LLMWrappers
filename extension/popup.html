@@ -1,30 +1,48 @@
 <!doctype html>
 <html>
-<head>
-  <meta charset="utf-8">
-  <link href="styles/popup.css" rel="stylesheet">
-  <meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>Tutum</title>
-</head>
-<body>
-  <div id="app" class="popup-content">
-    <!-- Logo or Icon at the top -->
-    <div class="logo-container">
-      <img src="icons/tutum.png" alt="Tutum Logo" class="logo">
+<<<<<<< Updated upstream
+  <head>
+    <meta charset="utf-8">
+    <link href="styles/popup.css" rel="stylesheet">
+  </head>
+  <body>
+    <div id="app" class="popup-content">
+      <h1 class="app-name">Extension Boilerplate</h1>
+
+      <div id="display-container"></div>
+
+      <footer>
+        <p>
+          <small>
+            <a href="#" class="js-options">Options</a>
+          </small>
+        </p>
+      </footer>
     </div>
     
-    <!-- Main Content -->
-    <h1 class="app-name">Tutum Security</h1>
-    <div id="display-container">
-      <p>Welcome to Tutum! Click below to start a scan.</p>
-      <button id="scanButton" class="btn-primary">Start Scan</button>
+    <script src="scripts/popup.js"></script>
+  </body>
+=======
+<head>
+  <meta charset="utf-8">
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Tutum Security</title>
+</head>
+<body class="bg-gray-800 text-white p-4">
+  <div id="app" class="popup-content bg-gray-900 rounded-lg shadow-lg p-6 text-center">
+    <div class="logo-container mb-4">
+      <img src="icons/tutum.png" alt="Tutum Logo" class="w-16 mx-auto">
     </div>
-
-    <!-- Footer -->
+    <h1 class="app-name text-xl font-bold text-blue-400 mb-4">Tutum Security</h1>
+    <div id="display-container" class="bg-gray-700 p-4 rounded-lg border border-blue-500 mb-4">
+      <p>Welcome to Tutum! Click below to start a scan.</p>
+      <button id="scanButton" class="btn-primary bg-blue-500 hover:bg-blue-600 text-white py-2 px-4 rounded-lg mt-4 transition">Start Scan</button>
+    </div>
     <footer>
       <p>
         <small>
-          <a href="options.html" class="js-options">options</a>
+          <a href="options.html" class="js-options text-blue-400 hover:text-blue-300">Options</a>
         </small>
       </p>
     </footer>
@@ -32,4 +50,5 @@
 
   <script src="scripts/popup.js"></script>
 </body>
+>>>>>>> Stashed changes
 </html>

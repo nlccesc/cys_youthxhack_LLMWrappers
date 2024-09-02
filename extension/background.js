@@ -1,6 +1,15 @@
+<<<<<<< Updated upstream
+// background/background.js
+import { URLChecker } from 'services/url_checker.js';
+import { QRScanner } from '../services/qr_scanner.js';
+import { AlertManager } from '../utils/alert_manager.js';
+
+
+=======
 import { URLChecker } from './services/url_checker.js';
 import { QRScanner } from './services/qr_scanner.js';
-import { AlertManager } from './utils/alert_manager.js';
+import { AlertManager } from './services/alert_manager.js';
+>>>>>>> Stashed changes
 
 const urlChecker = new URLChecker();
 const qrScanner = new QRScanner();

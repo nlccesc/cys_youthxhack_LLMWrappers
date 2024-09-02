@@ -1,15 +1,30 @@
-// extension/services/url_checker.js
+<<<<<<< Updated upstream
+// background/urlChecker.js
+=======
+import axios from 'axios';
+>>>>>>> Stashed changes
 
 class URLChecker {
     constructor() {
         this.threatListAPI = 'https://safebrowsing.googleapis.com/v4/threatMatches:find';
-        this.apiKey = 'SB_API_KEY'; // Replace 'YOUR_API_KEY' with your actual API key
+<<<<<<< Updated upstream
+        this.apiKey = 'SB_API_KEY';
+=======
+        this.apiKey = 'YOUR_API_KEY'; // Replace with your actual API key
+>>>>>>> Stashed changes
     }
 
     async checkURL(url) {
         console.log(`Checking URL: ${url}`);
+<<<<<<< Updated upstream
+        // placeholder to simulate checking URL
+        // make api request here
+        if (url.includes('malicious')) {
+            return 'danger';
+        } else {
+            return 'safe';
+=======
         
-        // Set up the request body according to the API specification
         const requestBody = {
             client: {
                 clientId: "yourcompanyname",
@@ -19,29 +34,18 @@ class URLChecker {
                 threatTypes: ["MALWARE", "SOCIAL_ENGINEERING", "UNWANTED_SOFTWARE", "POTENTIALLY_HARMFUL_APPLICATION"],
                 platformTypes: ["ANY_PLATFORM"],
                 threatEntryTypes: ["URL"],
-                threatEntries: [
-                    { url: url }
-                ]
+                threatEntries: [{ url: url }]
             }
         };
 
         try {
-            const response = await fetch(`${this.threatListAPI}?key=${this.apiKey}`, {
-                method: 'POST',
-                body: JSON.stringify(requestBody),
+            const response = await axios.post(`${this.threatListAPI}?key=${this.apiKey}`, requestBody, {
                 headers: {
                     'Content-Type': 'application/json'
                 }
             });
 
-            if (!response.ok) {
-                throw new Error(`Error: ${response.statusText}`);
-            }
-
-            const data = await response.json();
-
-            // Check if the API returned any threat matches
-            if (data && data.matches && data.matches.length > 0) {
+            if (response.data && response.data.matches && response.data.matches.length > 0) {
                 return 'danger';
             } else {
                 return 'safe';
@@ -49,6 +53,7 @@ class URLChecker {
         } catch (error) {
             console.error('Error checking URL:', error);
             return 'error';
+>>>>>>> Stashed changes
         }
     }
 }

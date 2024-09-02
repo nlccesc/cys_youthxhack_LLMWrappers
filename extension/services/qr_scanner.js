@@ -2,17 +2,22 @@
 
 // TODO implement QR scanner class here
 
-import { QRDecoder } from './qrdecoder.js';
+<<<<<<< Updated upstream
+import { QRDecoder } from 'qrdecoder.js';
+=======
+import jsQR from 'jsqr';
+>>>>>>> Stashed changes
 
 class QRScanner {
-    constructor() {
-        this.decoder = new QRDecoder();
-    }
-
     scan(imageData) {
         console.log('Scanning QR code...');
-        const decodedData = this.decoder.decode(imageData);
-        return decodedData;
+        const code = jsQR(imageData.data, imageData.width, imageData.height);
+        if (code) {
+            return code.data;
+        } else {
+            console.error('No QR code found.');
+            return null;
+        }
     }
 }
 
