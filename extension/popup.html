@@ -2,6 +2,8 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'https://fonts.googleapis.com'; font-src 'https://fonts.gstatic.com';">
+
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Tutum</title>
   <link href="styles/popup.css" rel="stylesheet">
@@ -41,25 +43,7 @@
     </footer>
   </div>
 
-  <script>
-    document.addEventListener('DOMContentLoaded', function() {
-      // Load saved theme and automatic detection preference
-      const savedColor = localStorage.getItem('popupColor');
-      const autoDetectEnabled = localStorage.getItem('autoDetect') === 'true';
-
-      if (savedColor) {
-        document.body.className = savedColor; // Update theme
-      }
-
-      // Set the state of the toggle based on saved preference
-      const autoDetectToggle = document.getElementById('autoDetectToggle');
-      autoDetectToggle.checked = autoDetectEnabled;
-
-      // Listen for toggle changes
-      autoDetectToggle.addEventListener('change', function() {
-        localStorage.setItem('autoDetect', this.checked);
-      });
-    });
-  </script>
+  <!-- Include external JavaScript file -->
+  <script src="scripts/popup.js"></script>
 </body>
 </html>
