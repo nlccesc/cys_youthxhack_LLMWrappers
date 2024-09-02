@@ -19,9 +19,9 @@
       <div class="option">
         <h5>Popup Color</h5>  
         <div class="radio-group">
-          <label><input class="js-radio white" type="radio" name="popupColor" value="white"> White</label>
-          <label><input class="js-radio beige" type="radio" name="popupColor" value="beige"> Beige</label>
-          <label><input class="js-radio lavender" type="radio" name="popupColor" value="lavender"> Lavender</label>
+          <label><input class="js-radio" type="radio" name="popupColor" value="white"> White</label>
+          <label><input class="js-radio" type="radio" name="popupColor" value="beige"> Beige</label>
+          <label><input class="js-radio" type="radio" name="popupColor" value="lavender"> Lavender</label>
         </div>
       </div>
     </section>
@@ -30,5 +30,25 @@
       <p>&copy; 2024 Tutum Security Extension</p>
     </footer>
   </div>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      // Load saved color preference
+      const savedColor = localStorage.getItem('popupColor');
+      if (savedColor) {
+        document.querySelector(`input[value="${savedColor}"]`).checked = true;
+        document.body.className = savedColor; // Update theme
+      }
+
+      // Listen for changes to the color preference
+      document.querySelectorAll('.js-radio').forEach(radio => {
+        radio.addEventListener('change', function() {
+          const selectedColor = this.value;
+          document.body.className = selectedColor; // Update theme
+          localStorage.setItem('popupColor', selectedColor); // Save preference
+        });
+      });
+    });
+  </script>
 </body>
 </html>

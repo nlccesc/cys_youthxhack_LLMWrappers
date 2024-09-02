@@ -35,17 +35,17 @@ chrome.runtime.onInstalled.addListener(() => {
     console.log("SafeBrowsing Extension installed.");
 
     // Comment out WebSocket connection if not needed right now
-    // const socket = new WebSocket("ws://localhost:8000/ws/alerts");
+    const socket = new WebSocket("ws://localhost:8000/ws/alerts");
 
-    // socket.onmessage = function (event) {
-    //     console.log("WebSocket message received:", event.data);
-    // };
+    socket.onmessage = function (event) {
+        console.log("WebSocket message received:", event.data);
+    };
 
-    // socket.onopen = function () {
-    //     console.log("WebSocket connection established.");
-    // };
+    socket.onopen = function () {
+        console.log("WebSocket connection established.");
+    };
 
-    // socket.onclose = function () {
-    //     console.log("WebSocket connection closed.");
-    // };
+    socket.onclose = function () {
+        console.log("WebSocket connection closed.");
+    };
 });
