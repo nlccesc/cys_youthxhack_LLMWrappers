@@ -1,5 +1,5 @@
 // background/background.js
-import { URLChecker } from 'services/url_checker.js';
+import { URLChecker } from './services/url_checker.js';
 import { QRScanner } from './services/qr_scanner.js';
 import { AlertManager } from './utils/alert_manager.js';
 
@@ -29,4 +29,24 @@ chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
         const result = urlChecker.checkURL(decodedURL);
         sendResponse({ url: decodedURL, result: result });
     }
+});
+
+
+chrome.runtime.onInstalled.addListener(() => {
+    console.log("SafeBrowsing Extension installed.");
+  
+    // Establish WebSocket connection for real-time alerts
+    const socket = new WebSocket("ws://localhost:8000/ws/alerts");
+    
+    socket.onmessage = function (event) {
+      console.log("WebSocket message received:", event.data);
+    };
+    
+    socket.onopen = function () {
+      console.log("WebSocket connection established.");
+    };
+    
+    socket.onclose = function () {
+      console.log("WebSocket connection closed.");
+    };
 });

@@ -1,3 +1,5 @@
+// extension/popup.js
+
 import ext from "../../client/src/scripts/utils/ext";
 import storage from "../../client/src/scripts/utils/storage";
 

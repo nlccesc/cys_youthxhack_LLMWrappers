@@ -1,3 +1,5 @@
+// extension\content_script.js
+
 chrome.runtime.onInstalled.addListener(() => {
     console.log("SafeBrowsing Extension installed.");
   
