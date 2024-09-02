@@ -1,35 +1,24 @@
 <!doctype html>
 <html>
-<head>
-  <meta charset="utf-8">
-  <link href="styles/popup.css" rel="stylesheet">
-  <meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>Tutum</title>
-</head>
-<body>
-  <div id="app" class="popup-content">
-    <!-- Logo or Icon at the top -->
-    <div class="logo-container">
-      <img src="icons/tutum.png" alt="Tutum Logo" class="logo">
+  <head>
+    <meta charset="utf-8">
+    <link href="styles/popup.css" rel="stylesheet">
+  </head>
+  <body>
+    <div id="app" class="popup-content">
+      <h1 class="app-name">Extension Boilerplate</h1>
+
+      <div id="display-container"></div>
+
+      <footer>
+        <p>
+          <small>
+            <a href="#" class="js-options">Options</a>
+          </small>
+        </p>
+      </footer>
     </div>
     
-    <!-- Main Content -->
-    <h1 class="app-name">Tutum Security</h1>
-    <div id="display-container">
-      <p>Welcome to Tutum! Click below to start a scan.</p>
-      <button id="scanButton" class="btn-primary">Start Scan</button>
-    </div>
-
-    <!-- Footer -->
-    <footer>
-      <p>
-        <small>
-          <a href="#" class="js-options">Options</a>
-        </small>
-      </p>
-    </footer>
-  </div>
-
-  <script src="scripts/popup.js"></script>
-</body>
+    <script src="scripts/popup.js"></script>
+  </body>
 </html>
