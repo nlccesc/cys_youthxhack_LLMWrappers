@@ -1,27 +1,33 @@
-var colorSelectors = document.querySelectorAll(".js-radio");
+document.addEventListener('DOMContentLoaded', function () {
+  // Elements
+  var colorSelectors = document.querySelectorAll(".js-radio");
 
-var setColor = (color) => {
-  document.body.style.backgroundColor = color;
-};
+  // Function to set color
+  var setColor = (color) => {
+    document.body.className = color; // Use className to change theme
+    localStorage.setItem('popupColor', color); // Save color in localStorage
+  };
 
-storage.get('color', function(resp) {
-  var color = resp.color;
-  var option;
-  if(color) {
-    option = document.querySelector(`.js-radio.${color}`);
-    setColor(color);
+  // Load the saved color
+  var savedColor = localStorage.getItem('popupColor');
+  if (savedColor) {
+    setColor(savedColor); // Apply saved color
+    var savedOption = document.querySelector(`.js-radio[value="${savedColor}"]`);
+    if (savedOption) savedOption.checked = true; // Ensure the correct option is checked
   } else {
-    option = colorSelectors[0]
+    // Default to the first color option
+    var defaultOption = colorSelectors[0];
+    if (defaultOption) {
+      setColor(defaultOption.value);
+      defaultOption.checked = true;
+    }
   }
 
-  option.setAttribute("checked", "checked");
-});
-
-colorSelectors.forEach(function(el) {
-  el.addEventListener("click", function(e) {
-    var value = this.value;
-    storage.set({ color: value }, function() {
-      setColor(value);
+  // Event listeners for each color selector
+  colorSelectors.forEach(function (el) {
+    el.addEventListener("click", function () {
+      var value = this.value;
+      setColor(value); // Set and save new color
     });
-  })
-})
+  });
+});
