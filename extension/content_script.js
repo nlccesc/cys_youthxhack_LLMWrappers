@@ -1,21 +1,7 @@
-// extension\content_script.js
+// content_script.js
 
-chrome.runtime.onInstalled.addListener(() => {
-    console.log("SafeBrowsing Extension installed.");
-  
-    // Establish WebSocket connection for real-time alerts (if necessary)
-    const socket = new WebSocket("ws://localhost:8000/ws/alerts");
-    
-    socket.onmessage = function (event) {
-      console.log("WebSocket message received:", event.data);
-    };
-    
-    socket.onopen = function () {
-      console.log("WebSocket connection established.");
-    };
-    
-    socket.onclose = function () {
-      console.log("WebSocket connection closed.");
-    };
-  });
-  
+chrome.runtime.sendMessage({ action: 'checkUrl', url: window.location.href }, response => {
+  if (response.result !== 'safe') {
+      alert(`Warning: The site ${window.location.href} is considered ${response.result}`);
+  }
+});
