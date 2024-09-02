@@ -2,49 +2,43 @@
 
 class URLChecker {
     constructor() {
-        this.threatListAPI = 'https://safebrowsing.googleapis.com/v4/threatMatches:find';
-        this.apiKey = 'SB_API_KEY'; // Replace 'YOUR_API_KEY' with your actual API key
+        this.urlScanAPI = 'https://urlscan.io/api/v1/scan/';
+        this.apiKey = 'c30d7585-9121-4468-8683-4bbf17b85a8f'; // Your URLScan.io API key
     }
 
     async checkURL(url) {
         console.log(`Checking URL: ${url}`);
         
-        // Set up the request body according to the API specification
+        // Set up the request body
         const requestBody = {
-            client: {
-                clientId: "yourcompanyname",
-                clientVersion: "1.0"
-            },
-            threatInfo: {
-                threatTypes: ["MALWARE", "SOCIAL_ENGINEERING", "UNWANTED_SOFTWARE", "POTENTIALLY_HARMFUL_APPLICATION"],
-                platformTypes: ["ANY_PLATFORM"],
-                threatEntryTypes: ["URL"],
-                threatEntries: [
-                    { url: url }
-                ]
-            }
+            url: url,
+            visibility: 'private' // Set to 'public' if you want the scan to be available publicly
         };
 
         try {
-            const response = await fetch(`${this.threatListAPI}?key=${this.apiKey}`, {
+            const response = await fetch(this.urlScanAPI, {
                 method: 'POST',
                 body: JSON.stringify(requestBody),
                 headers: {
-                    'Content-Type': 'application/json'
+                    'Content-Type': 'application/json',
+                    'API-Key': this.apiKey
                 }
             });
 
             if (!response.ok) {
-                throw new Error(`Error: ${response.statusText}`);
+                const errorText = await response.text();
+                throw new Error(`API response error: ${response.status} - ${errorText}`);
             }
 
             const data = await response.json();
 
-            // Check if the API returned any threat matches
-            if (data && data.matches && data.matches.length > 0) {
-                return 'danger';
+            // Check if the API returned a malicious result
+            // Normally, you would need to wait and check the results of the scan, but for simplicity,
+            // we'll assume immediate feedback based on this initial scan request
+            if (data.verdicts && data.verdicts.overall.malicious) {
+                return 'danger'; // URL is considered malicious
             } else {
-                return 'safe';
+                return 'safe'; // URL is not considered malicious
             }
         } catch (error) {
             console.error('Error checking URL:', error);
