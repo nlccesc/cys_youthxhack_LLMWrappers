@@ -5,7 +5,7 @@ body, html {
   padding: 0;
   font-family: 'Roboto', sans-serif;
   background-color: #f4f4f9;
-  color: #333;
+  color: #204A65;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -33,7 +33,7 @@ body, html {
 
 .app-name {
   font-size: 20px;
-  color: #4a4a4a;
+  color: #204A65;
   margin-bottom: 10px;
 }
 
@@ -43,8 +43,9 @@ body, html {
 
 .btn-primary {
   display: inline-block;
-  background-color: #4CAF50;
-  color: #fff;
+  background-color: #C3E0F5
+  ;
+  color: #394751;
   border: none;
   padding: 10px 20px;
   border-radius: 5px;
@@ -53,7 +54,8 @@ body, html {
 }
 
 .btn-primary:hover {
-  background-color: #45a049;
+  background-color: #204A65
+  ;
 }
 
 .toggle-container {
@@ -74,6 +76,6 @@ footer {
 }
 
 footer p {
-  color: #aaa;
+  color: #5DB9D2;
   font-size: 12px;
 }
