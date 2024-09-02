@@ -1,7 +1,9 @@
+// extension/services/url_checker.js
+
 class URLChecker {
     constructor() {
         this.threatListAPI = 'https://safebrowsing.googleapis.com/v4/threatMatches:find';
-        this.apiKey = 'YOUR_API_KEY'; // Replace 'YOUR_API_KEY' with your actual API key
+        this.apiKey = 'SB_API_KEY'; // Replace 'YOUR_API_KEY' with your actual API key
     }
 
     async checkURL(url) {

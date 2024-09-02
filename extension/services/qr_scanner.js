@@ -1,8 +1,8 @@
-
+// extension/services/qr_scanner.js
 
 // TODO implement QR scanner class here
 
-import { QRDecoder } from 'qrdecoder.js';
+import { QRDecoder } from './qrdecoder.js';
 
 class QRScanner {
     constructor() {

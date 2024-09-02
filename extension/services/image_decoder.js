@@ -1,3 +1,5 @@
+// extension/services/image_decoder.js
+
 // Description: This file implements the ImageDecoder class.
 
 // TODO: Implement Image decoder class here
