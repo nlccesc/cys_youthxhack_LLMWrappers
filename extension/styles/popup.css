@@ -1,89 +1,73 @@
-body {
+body, html {
   margin: 0;
   padding: 0;
-  font-family: 'Source Code Pro', monospace;
-  background-color: #0d1117;
-  color: #c9d1d9; 
+  font-family: 'Roboto', sans-serif;
+  background-color: #f4f4f9;
+  color: #333;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
 }
 
 .popup-content {
-  padding: 20px;
-  text-align: center;
   width: 300px;
-  background: linear-gradient(145deg, #1e2028, #161b22); 
+  background: #ffffff;
+  padding: 20px;
   border-radius: 10px;
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
 
 .logo-container {
   margin-bottom: 20px;
 }
 
 .logo {
-  width: 60px; 
+  width: 80px;
+  height: auto;
 }
 
 .app-name {
-  font-size: 20px;
-  color: #58a6ff;
+  font-size: 24px;
+  margin-bottom: 15px;
+  color: #4a4a4a;
+}
+
+#display-container {
   margin-bottom: 20px;
 }
 
 .btn-primary {
-  background-color: #1f8ef1; 
-  border: 1px solid #1a73e8; 
-  color: #ffffff;
+  background-color: #4CAF50;
+  border: none;
+  color: white;
   padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
   border-radius: 5px;
-  transition: background-color 0.3s, transform 0.2s;
+  transition: background-color 0.3s ease;
 }
 
 .btn-primary:hover {
-  background-color: #1a73e8; 
-  transform: scale(1.05); 
+  background-color: #45a049;
 }
 
-#display-container {
+footer {
   margin-top: 20px;
-  padding: 15px;
-  background-color: #1e2028; 
-  border: 1px solid #58a6ff; 
-  border-radius: 8px;
+  color: #aaa;
 }
 
-#display-container h2 {
-  font-size: 18px;
-  color: #58a6ff; 
-  margin-bottom: 10px;
-}
-
-.option {
-  margin-bottom: 15px;
-}
-
-.option h5 {
-  font-size: 16px;
-  color: #c9d1d9;
-}
-
-.radio-group label {
-  display: block;
-  margin: 5px 0;
-}
-
-footer p {
-  margin-top: 20px;
-  font-size: 14px;
-}
-
-footer p a {
-  color: #74def8; 
+footer a {
   text-decoration: none;
-  transition: color 0.3s, text-decoration 0.3s; 
+  color: #4CAF50;
+  font-weight: 500;
 }
 
-footer p a:hover {
-  color: #009fcb; 
-  font-weight: bold; 
-  text-decoration: underline; 
-}
+footer a:hover {
+  text-decoration: underline;
 }
