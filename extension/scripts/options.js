@@ -1,6 +1,3 @@
-import ext from "../../client/src/scripts/utils/ext";
-import storage from "../../client/src/scripts/utils/storage";
-
 var colorSelectors = document.querySelectorAll(".js-radio");
 
 var setColor = (color) => {
