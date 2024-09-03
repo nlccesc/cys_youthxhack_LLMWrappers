@@ -5,7 +5,7 @@ body, html {
   padding: 0;
   font-family: 'Roboto', sans-serif;
   background-color: #f4f4f9;
-  color: #333;
+  color: #204A65;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -14,9 +14,9 @@ body, html {
 }
 
 .popup-content {
-  width: 320px; /* Adjusted for a smaller popup */
+  width: 320px;
   padding: 15px;
-  background: #fff;
+  background: #e2e7fe;
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   text-align: center;
@@ -27,13 +27,13 @@ body, html {
 }
 
 .logo {
-  width: 50px; /* Smaller logo size */
+  width: 50px;
   height: 50px;
 }
 
 .app-name {
   font-size: 20px;
-  color: #4a4a4a;
+  color: #204A65;
   margin-bottom: 10px;
 }
 
@@ -41,19 +41,75 @@ body, html {
   margin-bottom: 20px;
 }
 
-.btn-primary {
-  display: inline-block;
-  background-color: #4CAF50;
-  color: #fff;
-  border: none;
-  padding: 10px 20px;
-  border-radius: 5px;
-  cursor: pointer;
-  transition: background-color 0.3s;
+.selection-circles {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
 }
 
-.btn-primary:hover {
-  background-color: #45a049;
+.circle {
+  width: 70px;
+  height: 70px;
+  background-color: #C3E0F5;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 10px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  font-size: 14px;
+  color: #394751;
+}
+
+.circle:hover {
+  background-color: #204A65;
+  color: #fff;
+}
+
+.hidden {
+  display: none;
+}
+
+#urlInput {
+  flex: 1;
+  padding: 10px;
+  font-size: 14px;
+  border: 1px solid #ccc;
+  border-radius: 20px;
+  margin-right: 10px;
+  width: calc(100% - 130px);
+  background-color: #f0f8ff;
+}
+
+.btn-primary, .btn-secondary {
+  background-color: #C3E0F5;
+  color: #394751;
+  border: none;
+  padding: 10px;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  flex-shrink: 0;
+  width: 100px;
+}
+
+.btn-primary:hover, .btn-secondary:hover {
+  background-color: #204A65;
+  color: #fff;
+}
+
+#statusSection {
+  margin-top: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#loadingIndicator, #resultIcon {
+  width: 50px;  /* Adjust width */
+  height: 50px; /* Adjust height to keep it smaller and consistent */
+  display: none; /* Hide by default */
 }
 
 .toggle-container {
@@ -74,6 +130,6 @@ footer {
 }
 
 footer p {
-  color: #aaa;
+  color: #5DB9D2;
   font-size: 12px;
 }

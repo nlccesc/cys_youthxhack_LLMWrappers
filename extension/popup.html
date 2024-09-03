@@ -3,7 +3,6 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'https://fonts.googleapis.com'; font-src 'https://fonts.gstatic.com';">
-
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Tutum</title>
   <link href="styles/popup.css" rel="stylesheet">
@@ -20,9 +19,35 @@
     <!-- Main Content -->
     <h1 class="app-name">Tutum Security</h1>
     <div id="display-container">
-      <p>Welcome to Tutum! Click below to start a scan.</p>
-      <button id="scanButton" class="btn-primary">Start Scan</button>
+      <p>Select an option below:</p>
       
+      <!-- Selection circles for URL checker and QR code scanner -->
+      <div class="selection-circles">
+        <div id="circle-url" class="circle">
+          <span>URL</span>
+        </div>
+        <div id="circle-qr" class="circle">
+          <span>QR</span>
+        </div>
+      </div>
+
+      <!-- URL input and scan button -->
+      <div id="urlScanSection" class="hidden">
+        <input type="text" id="urlInput" placeholder="Enter URL to scan">
+        <button id="scanUrlButton" class="btn-primary">Scan URL</button>
+        <!-- Status section for loading and result icons -->
+        <div id="statusSection">
+          <img id="loadingIndicator" src="icons/loading.gif" style="display: none; width: 20px; height: 20px;" alt="Loading...">
+          <img id="resultIcon" src="" style="display: none; width: 20px; height: 20px;" alt="Result">
+        </div>
+      </div>
+
+      <!-- QR Code scan section -->
+      <div id="qrScanSection" class="hidden">
+        <input type="file" id="uploadImageInput" accept="image/*">
+        <button id="scanImageButton" class="btn-secondary">Scan QR Code</button>
+      </div>
+
       <!-- Toggle for Automatic Detection -->
       <div class="toggle-container">
         <label class="toggle-switch">
